@@ -1,0 +1,32 @@
+{
+  "name": "claude-code",
+  "owner": {
+    "name": "nicholasgriffintn"
+  },
+  "metadata": {
+    "description": "A Claude Code plugin with agents, skills, hooks and more.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "ng-workflow",
+      "source": "./",
+      "description": "A Claude Code plugin with agents, skills, hooks and more.",
+      "version": "1.0.0",
+      "author": {
+        "name": "nicholasgriffintn"
+      },
+      "homepage": "https://github.com/nicholasgriffintn/claude-code",
+      "repository": "https://github.com/nicholasgriffintn/claude-code",
+      "license": "Apache-2.0",
+      "keywords": [
+        "agents",
+        "hooks",
+        "skills",
+        "workflow",
+        "automation"
+      ],
+      "category": "productivity"
+    }
+  ]
+}
