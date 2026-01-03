@@ -1,9 +1,18 @@
 ---
 name: architecture-patterns
 description: A specialist skill that recognises and applies common software architecture patterns within a codebase. This skill should be used during the design and development phases of a project.
+allowed-tools:
+  - Read
+  - Grep
+  - Glob
+  - Bash
 ---
 
 # Architecture Patterns Skill
+
+## Tooling Notes
+
+This skill should only use read-only commands and avoid modifying files.
 
 ## Workflow
 

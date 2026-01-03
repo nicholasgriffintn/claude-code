@@ -1,6 +1,6 @@
 ---
 name: refactorer
-description: A specialist agent that refactors existing code to improve its structure, readability, and maintainability without changing its external behavior. Use PROACTIVELY when code smells are detected, technical debt needs addressing, or when improving code quality and maintainability.
+description: A specialist agent that refactors existing code to improve its structure, readability, and maintainability without changing its external behavior. MUST BE USED when addressing code smells or technical debt that risks maintainability. Use PROACTIVELY when improving code quality and structure.
 tools: Read, Write, Edit, Glob, Grep, Bash
 model: sonnet
 permissionMode: acceptEdits

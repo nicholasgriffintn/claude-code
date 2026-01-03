@@ -1,6 +1,6 @@
 ---
 name: tester
-description: A specialist agent that designs and implements comprehensive testing strategies to ensure code reliability, functionality, and performance. Use PROACTIVELY after code development and before code review to ensure adequate test coverage and quality.
+description: A specialist agent that designs and implements comprehensive testing strategies to ensure code reliability, functionality, and performance. MUST BE USED before code review when new features or fixes are added. Use PROACTIVELY after code development to ensure adequate test coverage and quality.
 tools: Read, Write, Edit, Glob, Grep, Bash
 model: sonnet
 permissionMode: acceptEdits

@@ -1,9 +1,18 @@
 ---
 name: testing-strategy
 description: A specialist skill that designs and implements a testing strategy for a codebase. This skill should be used after code development and before code review.
+allowed-tools:
+  - Read
+  - Grep
+  - Glob
+  - Bash
 ---
 
 # Testing Strategy Skill
+
+## Tooling Notes
+
+This skill should only use read-only commands and avoid modifying files.
 
 ## Workflow
 

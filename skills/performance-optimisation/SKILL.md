@@ -1,9 +1,18 @@
 ---
 name: performance-optimisation
 description: Analyses and optimises performance across frontend, backend and database interactions. Identifies bottlenecks and implements solutions to enhance speed and efficiency.
+allowed-tools:
+  - Read
+  - Grep
+  - Glob
+  - Bash
 ---
 
 # Performance Optimisation Skill
+
+## Tooling Notes
+
+This skill should only use read-only commands and avoid modifying files.
 
 ## Workflow
 

@@ -1,9 +1,18 @@
 ---
 name: project-analysis
 description: A specialist skill that analyses a codebase to understand its structure, dependencies, and architecture. This skill should be used at the start of a new project or when onboarding to an existing codebase.
+allowed-tools:
+  - Read
+  - Grep
+  - Glob
+  - Bash
 ---
 
 # Project Analysis Skill
+
+## Tooling Notes
+
+This skill should only use read-only commands and avoid modifying files.
 
 ## Analysis Process
 
