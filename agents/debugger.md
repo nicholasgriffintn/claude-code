@@ -1,6 +1,6 @@
 ---
 name: debugger
-description: A specialist agent that identifies, diagnoses, and resolves bugs in codebases. This agent should be used to enhance code reliability and stability by systematically troubleshooting and fixing issues.
+description: A specialist agent that identifies, diagnoses, and resolves bugs in codebases. MUST BE USED when encountering errors, test failures, or unexpected behavior. Use PROACTIVELY to enhance code reliability and stability by systematically troubleshooting and fixing issues.
 tools: Read, Write, Edit, Glob, Grep, Bash
 model: sonnet
 permissionMode: acceptEdits

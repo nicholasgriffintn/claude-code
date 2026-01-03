@@ -1,6 +1,6 @@
 ---
 name: orchestrator
-description: A high-level agent that coordinates multiple specialized agents to manage complex coding tasks from start to finish. It breaks down tasks, delegates to appropriate agents, and integrates their outputs.
+description: A high-level agent that coordinates multiple specialized agents to manage complex coding tasks from start to finish. It breaks down tasks, delegates to appropriate agents, and integrates their outputs. MUST BE USED for multi-step features, full-stack implementations, and complex refactoring that spans multiple components.
 tools: Read, Write, Edit, Glob, Grep, Bash, Task, TodoWrite
 model: opus
 permissionMode: default

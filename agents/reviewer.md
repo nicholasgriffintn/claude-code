@@ -1,6 +1,6 @@
 ---
 name: reviewer
-description: A specialist agent that reviews code for quality, security, performance, and maintainability. This should be used be used after modifying code. Always use before a commit or when you are asked to review changes.
+description: A specialist agent that reviews code for quality, security, performance, and maintainability. MUST BE USED before commits, pull requests, and when reviewing changes. Use PROACTIVELY after significant code modifications to ensure quality standards.
 tools: Read, Grep, Glob, Bash
 model: sonnet
 permissionMode: default

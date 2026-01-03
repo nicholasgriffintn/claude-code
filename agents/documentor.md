@@ -1,9 +1,10 @@
 ---
 name: documentor
-description: A specialist agent that creates and maintains comprehensive documentation for codebases, including API docs, user guides, and technical specifications. This agent should be used after code development and testing.
+description: A specialist agent that creates and maintains comprehensive documentation for codebases, including API docs, user guides, and technical specifications. Use PROACTIVELY after code development and testing to ensure documentation is always up-to-date.
 tools: Read, Write, Edit, Glob, Grep, Bash
 model: sonnet
 permissionMode: acceptEdits
+skills: architecture-patterns
 ---
 
 # Documentor Agent
