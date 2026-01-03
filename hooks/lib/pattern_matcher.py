@@ -8,7 +8,10 @@ from typing import List, Optional
 def normalize_file_path(file_path: str) -> str:
     """Normalize file path to prevent traversal attacks."""
     file_path = os.path.normpath(file_path)
-    file_path = file_path.lstrip('./')
+    # Remove leading './' but preserve leading '.' for dotfiles
+    if file_path.startswith('./'):
+        file_path = file_path[2:]
+    # Remove absolute path prefix
     file_path = file_path.lstrip('/')
     return file_path
 

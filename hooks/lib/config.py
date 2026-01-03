@@ -33,7 +33,7 @@ def get_protected_patterns() -> Tuple[List[str], List[str]]:
 def get_secret_patterns() -> Tuple[List[Tuple[str, str]], set]:
     """Get secret detection patterns."""
     patterns = [
-        (r'(?i)(api[_-]?key|apikey)\s*[:=]\s*["\']?[a-zA-Z0-9_-]{10,}', 'API key'),
+        (r'(?i)(api[_-]?key|apikey)\s*[:=]\s*["\']?[a-zA-Z0-9_-]{20,}', 'API key'),
         (r'(?i)(secret|password|passwd|pwd)\s*[:=]\s*["\'][^"\']+["\']', 'Password/Secret (quoted)'),
         (r'(?i)(secret|password|passwd|pwd)\s*[:=]\s*[^"\'\s]{8,}', 'Password/Secret (unquoted)'),
         (r'(?i)bearer\s+[a-zA-Z0-9_-]{20,}', 'Bearer token'),
