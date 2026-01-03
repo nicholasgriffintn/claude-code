@@ -21,7 +21,7 @@ git clone https://github.com/nicholasgriffintn/claude-code.git
 
 ### Agents
 
-The plugin includes six specialized agents that can be invoked to handle specific development tasks:
+The plugin includes seven specialized agents that can be invoked to handle specific development tasks:
 
 #### 1. Orchestrator Agent
 
@@ -95,6 +95,19 @@ Improves code structure and maintainability without changing behavior.
 - Code smell elimination
 - Technical debt reduction
 - Architecture improvements
+
+#### 7. Security Agent
+
+**Command**: Available as `ng-workflow:security`
+
+Performs security reviews, threat modeling, and remediation guidance.
+
+**Use cases**:
+
+- Authentication/authorization changes
+- Handling secrets or PII
+- Public endpoint or API exposure
+- Dependency upgrades and supply-chain risk checks
 
 ### Skills
 
@@ -172,6 +185,21 @@ Analyzes and optimizes performance across frontend, backend, and database.
 - Frontend rendering optimization
 
 **How to invoke**: "Use the performance-optimisation skill to analyze bottlenecks"
+
+#### 6. Security Review
+
+**Skill**: `ng-workflow:security-review`
+
+Performs security reviews, threat modeling, and remediation guidance.
+
+**Use when**:
+
+- Authentication/authorization changes
+- Handling secrets or PII
+- Public endpoints or APIs
+- Dependency upgrades
+
+**How to invoke**: "Use the security-review skill to assess security risks"
 
 ### Hooks
 
@@ -286,4 +314,3 @@ git add .
 # - Ensure tests still pass
 # - Improve maintainability
 ```
-

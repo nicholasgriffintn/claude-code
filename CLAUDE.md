@@ -12,15 +12,15 @@ This repository contains the `ng-workflow` Claude Code plugin, a comprehensive w
 
 ### What This Plugin Provides
 
-1. **6 Specialized Agents** - Task-specific AI agents for different development activities
-2. **5 Skills** - Reusable knowledge modules that agents can leverage
+1. **7 Specialized Agents** - Task-specific AI agents for different development activities
+2. **6 Skills** - Reusable knowledge modules that agents can leverage
 3. **Multiple Hooks** - Automated validation and workflow enforcement
 
 ### Repository Structure
 
 ```
-/agents/          - Agent definitions (orchestrator, reviewer, debugger, tester, documentor, refactorer)
-/skills/          - Skill modules (project-analysis, architecture-patterns, git-workflow, testing-strategy, performance-optimisation)
+/agents/          - Agent definitions (orchestrator, reviewer, debugger, tester, documentor, refactorer, security)
+/skills/          - Skill modules (project-analysis, architecture-patterns, git-workflow, testing-strategy, performance-optimisation, security-review)
 /hooks/           - Hook scripts and configuration
 /.claude-plugin/  - Plugin metadata and marketplace info
 ```
@@ -37,13 +37,14 @@ This repository contains the `ng-workflow` Claude Code plugin, a comprehensive w
 | **tester** | Test strategy and implementation | After feature development, coverage improvement |
 | **documentor** | Documentation creation | After code completion, API changes |
 | **refactorer** | Code structure improvement | Code smells, technical debt, refactoring |
+| **security** | Security reviews and threat modeling | Auth/permissions changes, secrets/PII, public endpoints |
 
 ### Agent Details
 
 #### Orchestrator
 - **Model**: Opus (most powerful)
 - **Tools**: Read, Write, Edit, Glob, Grep, Bash, Task, TodoWrite
-- **Skills**: project-analysis, architecture-patterns
+- **Skills**: project-analysis, architecture-patterns, security-review
 - **Use for**: High-level coordination of complex development tasks
 
 #### Reviewer
@@ -79,6 +80,13 @@ This repository contains the `ng-workflow` Claude Code plugin, a comprehensive w
 - **Permission**: acceptEdits
 - **Focus**: Code smells, maintainability, design patterns
 
+#### Security
+- **Model**: Sonnet
+- **Tools**: Read, Write, Edit, Glob, Grep, Bash
+- **Skills**: security-review, testing-strategy
+- **Permission**: acceptEdits
+- **Focus**: Threat modeling, input validation, authN/authZ, secrets and PII handling
+
 ## Skills Reference
 
 **IMPORTANT**: Skills are NOT slash commands. They are knowledge modules that agents reference automatically or that you can request in natural language (e.g., "Please use the project-analysis skill").
@@ -111,6 +119,11 @@ This repository contains the `ng-workflow` Claude Code plugin, a comprehensive w
 **Purpose**: Performance analysis and optimization
 **Areas**: Frontend, backend, database, algorithms
 **How to use**: "Use the performance-optimisation skill to analyze bottlenecks"
+
+### security-review
+**Purpose**: Security reviews, threat modeling, and remediation guidance
+**Focus**: AuthN/AuthZ, input validation, secrets/PII, dependency risk
+**How to use**: "Use the security-review skill to assess security risks"
 
 ## Hooks System
 
