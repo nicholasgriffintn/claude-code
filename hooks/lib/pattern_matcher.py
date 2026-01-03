@@ -31,5 +31,20 @@ def matches_pattern(file_path: str, patterns: List[str]) -> Optional[str]:
 
 def is_test_file(file_path: str) -> bool:
     """Check if file is a test file."""
-    file_path_lower = file_path.lower()
-    return 'test' in file_path_lower or 'spec' in file_path_lower
+    normalized_path = normalize_file_path(file_path).lower()
+    parts = normalized_path.split(os.sep)
+    basename = os.path.basename(normalized_path)
+
+    if any(part in ('test', 'tests', '__tests__', 'spec', 'specs') for part in parts):
+        return True
+
+    if basename.startswith('test_'):
+        return True
+
+    if basename.endswith(('_test', '_spec')):
+        return True
+
+    if '.test.' in basename or '.spec.' in basename:
+        return True
+
+    return False

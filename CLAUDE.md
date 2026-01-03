@@ -13,14 +13,16 @@ This repository contains the `ng-workflow` Claude Code plugin, a comprehensive w
 ### What This Plugin Provides
 
 1. **7 Specialized Agents** - Task-specific AI agents for different development activities
-2. **6 Skills** - Reusable knowledge modules that agents can leverage
-3. **Multiple Hooks** - Automated validation and workflow enforcement
+2. **8 Skills** - Reusable knowledge modules that agents can leverage
+3. **3 Custom Commands** - Slash commands for feature development, PR review, and git workflow
+4. **Multiple Hooks** - Automated validation and workflow enforcement
 
 ### Repository Structure
 
 ```
 /agents/          - Agent definitions (orchestrator, reviewer, debugger, tester, documentor, refactorer, security)
-/skills/          - Skill modules (project-analysis, architecture-patterns, git-workflow, testing-strategy, performance-optimisation, security-review)
+/skills/          - Skill modules (project-analysis, architecture-patterns, git-workflow, testing-strategy, performance-optimisation, security-review, frontend-design, backend-design)
+/commands/        - Slash command definitions (feature-dev, commit-push-pr, review-pr)
 /hooks/           - Hook scripts and configuration
 /.claude-plugin/  - Plugin metadata and marketplace info
 ```
@@ -124,6 +126,30 @@ This repository contains the `ng-workflow` Claude Code plugin, a comprehensive w
 **Purpose**: Security reviews, threat modeling, and remediation guidance
 **Focus**: AuthN/AuthZ, input validation, secrets/PII, dependency risk
 **How to use**: "Use the security-review skill to assess security risks"
+
+### frontend-design
+**Purpose**: Create distinctive, production-grade frontend interfaces with strong aesthetic direction
+**Focus**: Typography, layout, motion, and visual systems
+**How to use**: "Use the frontend-design skill to design this interface"
+
+### backend-design
+**Purpose**: Design robust backend systems, APIs, and data models
+**Focus**: Contracts, data modeling, reliability, performance, and security
+**How to use**: "Use the backend-design skill to plan this service"
+
+## Commands Reference
+
+### feature-dev
+**Command**: `/ng-workflow:feature-dev`  
+**Purpose**: Guided feature development with discovery, architecture design, and review phases.
+
+### commit-push-pr
+**Command**: `/ng-workflow:commit-push-pr`  
+**Purpose**: Commit staged changes, push the branch, and open a PR via `gh`.
+
+### review-pr
+**Command**: `/ng-workflow:review-pr`  
+**Purpose**: Comprehensive PR review using specialized agents (optionally scoped by review aspects).
 
 ## Hooks System
 
@@ -233,6 +259,9 @@ Address these code smells:
 - [skills/git-workflow/SKILL.md](skills/git-workflow/SKILL.md)
 - [skills/testing-strategy/SKILL.md](skills/testing-strategy/SKILL.md)
 - [skills/performance-optimisation/SKILL.md](skills/performance-optimisation/SKILL.md)
+- [skills/security-review/SKILL.md](skills/security-review/SKILL.md)
+- [skills/frontend-design/SKILL.md](skills/frontend-design/SKILL.md)
+- [skills/backend-design/SKILL.md](skills/backend-design/SKILL.md)
 
 ### Hook Configuration
 - [hooks/hooks.json](hooks/hooks.json) - Main hook configuration

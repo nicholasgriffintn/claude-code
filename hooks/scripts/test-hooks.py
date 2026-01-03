@@ -78,6 +78,19 @@ def main():
             'expected_exit': 2
         },
         {
+            'name': 'security-check (MultiEdit secret detected)',
+            'hook': 'security-check',
+            'input': {
+                'tool_input': {
+                    'file_path': 'config.py',
+                    'edits': [
+                        {'new_string': 'API_KEY = sk-' + 'a' * 48 + '\n'}
+                    ]
+                }
+            },
+            'expected_exit': 2
+        },
+        {
             'name': 'format-on-edit',
             'hook': 'format-on-edit',
             'input': {'tool_input': {'file_path': 'test.py'}},

@@ -59,7 +59,16 @@ class BaseHook(ABC):
     def get_content(self) -> Optional[str]:
         """Extract content from tool_input."""
         tool_input = self.input_data.get('tool_input', {})
-        return tool_input.get('content', '') or tool_input.get('new_string', '')
+        content = tool_input.get('content', '')
+        if content:
+            return content
+        new_string = tool_input.get('new_string', '')
+        if new_string:
+            return new_string
+        edits = tool_input.get('edits', [])
+        if edits:
+            return ' '.join(edit.get('new_string', '') for edit in edits)
+        return ''
 
     def get_command(self) -> Optional[str]:
         """Extract command from tool_input."""

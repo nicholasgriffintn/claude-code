@@ -115,3 +115,78 @@ def get_agent_hints() -> Tuple[Dict[str, str], List[Tuple[str, str]]]:
     ]
 
     return hints, dangerous
+
+
+def get_security_reminders() -> List[Dict[str, Any]]:
+    """Get security reminder rules for risky patterns."""
+    return [
+        {
+            'rule_name': 'github_actions_workflow',
+            'path_substrings': ['.github/workflows/'],
+            'path_suffixes': ['.yml', '.yaml'],
+            'reminder': (
+                "You are editing a GitHub Actions workflow file. "
+                "Avoid command injection by never passing untrusted inputs "
+                "directly into `run:`. Prefer `env:` with quoting, and review:\n"
+                "https://github.blog/security/vulnerability-research/"
+                "how-to-catch-github-actions-workflow-injections-before-attackers-do/\n"
+                "Risky inputs include issue/PR titles, bodies, comments, and commit messages."
+            ),
+        },
+        {
+            'rule_name': 'child_process_exec',
+            'substrings': ['child_process.exec(', 'execSync('],
+            'reminder': (
+                "Security Warning: `child_process.exec()` can lead to command injection. "
+                "Prefer `execFile` with arguments or a hardened wrapper."
+            ),
+        },
+        {
+            'rule_name': 'new_function_injection',
+            'substrings': ['new Function'],
+            'reminder': (
+                "Security Warning: `new Function()` evaluates dynamic code and risks injection. "
+                "Prefer safer, non-eval alternatives."
+            ),
+        },
+        {
+            'rule_name': 'eval_injection',
+            'substrings': ['eval('],
+            'reminder': (
+                "Security Warning: `eval()` executes arbitrary code. "
+                "Prefer safe parsers (e.g., JSON.parse) or alternative designs."
+            ),
+        },
+        {
+            'rule_name': 'react_dangerously_set_html',
+            'substrings': ['dangerouslySetInnerHTML'],
+            'reminder': (
+                "Security Warning: `dangerouslySetInnerHTML` can cause XSS. "
+                "Sanitize untrusted HTML (e.g., DOMPurify) or use safe rendering."
+            ),
+        },
+        {
+            'rule_name': 'document_write_xss',
+            'substrings': ['document.write'],
+            'reminder': (
+                "Security Warning: `document.write()` can be exploited for XSS. "
+                "Use safe DOM APIs instead."
+            ),
+        },
+        {
+            'rule_name': 'innerHTML_xss',
+            'substrings': ['.innerHTML =', '.innerHTML='],
+            'reminder': (
+                "Security Warning: setting `innerHTML` with untrusted content can cause XSS. "
+                "Use `textContent` or sanitize HTML."
+            ),
+        },
+        {
+            'rule_name': 'os_system_injection',
+            'substrings': ['os.system(', 'from os import system'],
+            'reminder': (
+                "Security Warning: `os.system()` is unsafe with untrusted input. "
+                "Prefer subprocess with explicit arguments."
+            ),
+        },
+    ]

@@ -201,6 +201,74 @@ Performs security reviews, threat modeling, and remediation guidance.
 
 **How to invoke**: "Use the security-review skill to assess security risks"
 
+#### 7. Frontend Design
+
+**Skill**: `ng-workflow:frontend-design`
+
+Creates distinctive, production-grade frontend interfaces with strong aesthetic direction.
+
+**Use when**:
+
+- Building UI components, pages, or apps
+- Designing new frontend experiences
+- Establishing visual direction or interaction patterns
+
+**How to invoke**: "Use the frontend-design skill to design this interface"
+
+#### 8. Backend Design
+
+**Skill**: `ng-workflow:backend-design`
+
+Designs robust backend systems, APIs, and data models with clear trade-offs.
+
+**Use when**:
+
+- Planning services and API contracts
+- Designing data models or storage strategy
+- Defining reliability, performance, or scaling requirements
+
+**How to invoke**: "Use the backend-design skill to plan this service"
+
+### Commands
+
+The plugin includes custom slash commands to streamline common workflows:
+
+#### 1. Feature Development
+
+**Command**: `/ng-workflow:feature-dev`
+
+Guided feature development workflow: discovery, exploration, clarification, architecture design, implementation, and review.
+
+**Example**:
+
+```
+/ng-workflow:feature-dev "Add CSV export to reports"
+```
+
+#### 2. Commit, Push, and PR
+
+**Command**: `/ng-workflow:commit-push-pr`
+
+Commits staged changes, pushes the current branch, and opens a PR via `gh pr create`.
+
+**Example**:
+
+```
+/ng-workflow:commit-push-pr
+```
+
+#### 3. PR Review
+
+**Command**: `/ng-workflow:review-pr`
+
+Runs a comprehensive PR review using specialized agents, with optional review aspects.
+
+**Example**:
+
+```
+/ng-workflow:review-pr tests errors
+```
+
 ### Hooks
 
 The plugin includes several hooks that automatically run during your workflow:
